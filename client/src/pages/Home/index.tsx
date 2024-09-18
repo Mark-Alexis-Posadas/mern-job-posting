@@ -1,6 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import { JobItem } from "../../components/JobItem";
 import { Item } from "../../types/jobItem";
+import { Link } from "react-router-dom";
 
 export const Home: FC = () => {
   const [jobData, setJobData] = useState<Item[]>([]);
@@ -28,7 +29,9 @@ export const Home: FC = () => {
   return (
     <div className="p-20 flex flex-wrap">
       {jobData.map((item) => (
-        <JobItem item={item} key={item._id} />
+        <Link to={`/job/${item._id}`} key={item._id}>
+          <JobItem item={item} />
+        </Link>
       ))}
     </div>
   );
