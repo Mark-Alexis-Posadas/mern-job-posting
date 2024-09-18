@@ -15,7 +15,7 @@ export const Home: FC = () => {
       }
 
       const data: Item[] = await response.json();
-      console.log(data);
+
       setJobData(data);
     } catch (error) {
       console.error("There was a problem with the fetch operation:", error);

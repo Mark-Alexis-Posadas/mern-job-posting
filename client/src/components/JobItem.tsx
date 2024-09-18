@@ -11,7 +11,7 @@ export const JobItem: FC<JobItemTypes> = ({ item }) => {
       <img
         src={item.logo}
         alt={`${item.company} logo`}
-        className="w-12 h-12 mr-4"
+        className="w-12 h-12 mr-4 object-cover"
       />
       {item.isNew && (
         <span className="absolute top-4 left-4 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">

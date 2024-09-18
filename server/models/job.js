@@ -10,7 +10,7 @@ const jobSchema = Schema({
   position: { type: String, required: true },
   role: { type: String, required: true },
   level: { type: String, required: true },
-  postedAt: { type: String, required: true },
+  postedAt: { type: Date, default: Date.now, required: true },
   contract: { type: String, required: true },
   location: { type: String, required: true },
   languages: { type: [String], required: true },
