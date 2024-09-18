@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from "react";
 import { JobItem } from "../../components/JobItem";
 import { Item } from "../../types/jobItem";
 import { Link } from "react-router-dom";
+import { Section } from "../../components/Section";
 
 export const Home: FC = () => {
   const [jobData, setJobData] = useState<Item[]>([]);
@@ -27,12 +28,14 @@ export const Home: FC = () => {
   }, []);
 
   return (
-    <div className="p-20 flex flex-wrap">
-      {jobData.map((item) => (
-        <Link to={`/job/${item._id}`} key={item._id}>
-          <JobItem item={item} />
-        </Link>
-      ))}
-    </div>
+    <Section>
+      <div className="flex flex-wrap gap-4">
+        {jobData.map((item) => (
+          <Link to={`/job/${item._id}`} key={item._id}>
+            <JobItem item={item} />
+          </Link>
+        ))}
+      </div>
+    </Section>
   );
 };

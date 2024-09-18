@@ -3,11 +3,7 @@ import { JobItemTypes } from "../types/jobItem";
 
 export const JobItem: FC<JobItemTypes> = ({ item }) => {
   return (
-    <div
-      className={`bg-white my-3 border rounded-lg p-6 shadow-md ${
-        item.featured ? "border-blue-500" : "border-gray-200"
-      } relative`}
-    >
+    <div className="relative bg-white my-3 border rounded-lg p-6 shadow-md border-gray-200">
       <img
         src={item.logo}
         alt={`${item.company} logo`}
