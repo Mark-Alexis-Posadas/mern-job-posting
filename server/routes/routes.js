@@ -1,14 +1,16 @@
 const express = require("express");
-const { getAllJobs, createJob } = require("../controllers/jobController");
+const {
+  getAllJobs,
+  createJob,
+  getSingleJob,
+} = require("../controllers/jobController");
 const router = express.Router();
 
 // Get all jobs
 router.get("/all-jobs", getAllJobs);
 
 // Get a single job by ID
-router.get("/get-single-job/:id", (req, res) => {
-  // Handler code here
-});
+router.get("/get-single-job/:id", getSingleJob);
 
 // Create a new job
 router.post("/create-job", createJob);

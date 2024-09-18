@@ -46,4 +46,14 @@ const createJob = async (req, res) => {
   }
 };
 
-module.exports = { getAllJobs, createJob };
+const getSingleJob = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const job = await Job.findById(id);
+    res.status(201).json(job);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+module.exports = { getAllJobs, createJob, getSingleJob };
