@@ -3,13 +3,13 @@ import { JobItemTypes } from "../types/jobItem";
 
 export const JobItem: FC<JobItemTypes> = ({ item }) => {
   return (
-    <div className="relative bg-white my-3 border rounded-lg p-6 shadow-md border-gray-200">
+    <div className="relative bg-white border rounded-lg p-6 shadow-md border-gray-200">
       <img
         src={item.logo}
         alt={`${item.company} logo`}
         className="w-12 h-12 mr-4 object-cover"
       />
-      {item.isNew && (
+      {item.isRecentlyCreated && (
         <span className="absolute top-4 left-4 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">
           NEW!
         </span>

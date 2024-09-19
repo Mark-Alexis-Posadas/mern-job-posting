@@ -5,7 +5,7 @@ const { Schema } = mongoose;
 const jobSchema = Schema({
   company: { type: String, required: true },
   logo: { type: String, required: true },
-  isNew: { type: Boolean, required: true },
+  isRecentlyCreated: { type: Boolean, required: true },
   featured: { type: Boolean, required: true },
   position: { type: String, required: true },
   role: { type: String, required: true },
@@ -13,6 +13,10 @@ const jobSchema = Schema({
   postedAt: { type: Date, default: Date.now, required: true },
   contract: { type: String, required: true },
   location: { type: String, required: true },
+  jodDescription: { type: [String], required: true },
+  companyOverview: { type: String, required: true },
+  positionOverview: { type: String, required: true },
+  keyResponsibilities: { type: String, required: true },
   languages: { type: [String], required: true },
   tools: { type: [String], default: [] },
 });

@@ -2,7 +2,7 @@ export interface Item {
   _id: string;
   company: string;
   contract: string;
-  isNew: boolean;
+  isRecentlyCreated: boolean;
   featured: boolean;
   languages: string[];
   level: string;

@@ -13,7 +13,7 @@ const createJob = async (req, res) => {
   const {
     company,
     logo,
-    isNew,
+    isRecentlyCreated,
     featured,
     position,
     role,
@@ -28,7 +28,7 @@ const createJob = async (req, res) => {
     const job = await Job.create({
       company,
       logo,
-      isNew,
+      isRecentlyCreated,
       featured,
       position,
       role,
