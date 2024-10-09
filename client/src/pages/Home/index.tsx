@@ -11,11 +11,11 @@ export const Home: FC = () => {
   const [filterData, setFilterData] = useState<Item[]>([]);
   const [search, setSearch] = useState<string>("");
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
 
-  const handleSearchSubmit = (e) => {
+  const handleSearchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const searchResult = jobData.filter(
@@ -65,14 +65,14 @@ export const Home: FC = () => {
               placeholder="Job title,keywords,or company"
             />
           </div>
-          {/* <div className="w-full relative flex items-center gap-3">
+          <div className="w-full relative flex items-center gap-3">
             <FontAwesomeIcon icon={faLocationDot} />
             <input
               type="text"
               className="w-full bg-transparent outline-none"
               placeholder="City,state,zip code"
             />
-          </div> */}
+          </div>
           <button
             type="submit"
             className="w-[200px] p-2 rounded text-white bg-blue-500"

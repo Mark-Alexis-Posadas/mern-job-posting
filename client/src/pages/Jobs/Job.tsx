@@ -1,34 +1,34 @@
 import { FC, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Item } from "../../types/jobItem";
-import { useFetch } from "../../hooks/useFetch";
+// import { useFetch } from "../../hooks/useFetch";
 
 export const Job: FC = () => {
   const { id } = useParams<{ id: string }>();
-  // const [jobData, setJobData] = useState<Item | null>(null);
-  const { jobData } = useFetch(
-    `http://localhost:4000/api/jobs/get-single-job/${id}`
-  );
-  // const fetchJobs = async () => {
-  //   try {
-  //     const response = await fetch(
-  //       `http://localhost:4000/api/jobs/get-single-job/${id}`
-  //     );
+  const [jobData, setJobData] = useState<Item | null>(null);
+  // const { jobData } = useFetch(
+  //   `http://localhost:4000/api/jobs/get-single-job/${id}`
+  // );
+  const fetchJobs = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:4000/api/jobs/get-single-job/${id}`
+      );
 
-  //     if (!response.ok) {
-  //       throw new Error("Network response was not ok");
-  //     }
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
 
-  //     const data: Item = await response.json(); // Expecting a single job object
-  //     setJobData(data);
-  //   } catch (error) {
-  //     console.error("There was a problem with the fetch operation:", error);
-  //   }
-  // };
+      const data: Item = await response.json(); // Expecting a single job object
+      setJobData(data);
+    } catch (error) {
+      console.error("There was a problem with the fetch operation:", error);
+    }
+  };
 
-  // useEffect(() => {
-  //   fetchJobs();
-  // }, []);
+  useEffect(() => {
+    fetchJobs();
+  }, []);
 
   return (
     <div>
