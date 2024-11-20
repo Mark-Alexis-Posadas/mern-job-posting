@@ -1,0 +1,50 @@
+# Beginner MySQL Exercises
+
+These exercises are designed to help you practice basic SQL queries using the given tables: **Customers**, **Orders**, and **Shippings**.
+
+## 1. List all customers
+- Write a query to retrieve all customer details (customer_id, first_name, last_name, age, country) from the `Customers` table. -`DONE`
+
+## 2. Find orders placed by a specific customer
+- Write a query to find all orders placed by the customer with `customer_id = 4`. Display the `order_id`, `item`, and `amount`. `DONE`
+
+## 3. Count the number of orders per customer
+- Write a query to count how many orders each customer has made. Show the `customer_id` and the total number of orders.
+
+## 4. Find customers who have ordered a specific item
+- Write a query to find all customers who have ordered the item "Keyboard". Return the `customer_id`, `first_name`, and `last_name` of these customers.
+
+## 5. Join Customers with Orders
+- Write a query to join the `Customers` table with the `Orders` table. Display the `customer_id`, `first_name`, `last_name`, and the `item` they have ordered.
+
+## 6. Find all shipments with 'Pending' status
+- Write a query to find all shipments that are currently in the "Pending" status. Return the `shipping_id`, `status`, and `customer` for each shipment.
+
+## 7. Find the total amount spent by each customer
+- Write a query to find the total amount spent by each customer. For each customer, show their `customer_id`, `first_name`, `last_name`, and the total amount they spent (sum of `amount` from Orders).
+
+## 8. List customers who have placed an order but have not yet received a shipment
+- Write a query to find customers who have placed an order (i.e., they appear in the `Orders` table) but have no corresponding shipment in the `Shippings` table. Return `customer_id`, `first_name`, and `last_name`.
+
+## 9. Find the most expensive item ordered
+- Write a query to find the most expensive item ordered in terms of `amount`. Display the `item` and the `amount`. `DONE`
+
+## 10. Find customers from specific countries
+- Write a query to find all customers from the country "USA" and "UK". Return the `customer_id`, `first_name`, and `last_name` for these customers.
+
+---
+
+### Bonus:
+
+## 11. Find the average age of customers by country
+- Write a query to calculate the average age of customers, grouped by country. Return the country and the average age of the customers in that country.
+
+
+SOLUTIONS
+
+SELECT * FROM Customers;
+
+SELECT * FROM Orders
+WHERE customer_id = 4
+
+SELECT max(amount) FROM Orders;
